@@ -1,0 +1,69 @@
+@import "reset";
+@import "bourbon/bourbon";
+@import "neat/neat";
+
+@font-face { 
+  font-family: 'octin_vintageb_regular';
+  src: url('../fonts/octin_vintage_b_rg-webfont.eot');
+  src: url('../fonts/octin_vintage_b_rg-webfont.eot?#iefix') format('embedded-opentype'),
+     url('../fonts/octin_vintage_b_rg-webfont.woff') format('woff'),
+     url('../fonts/octin_vintage_b_rg-webfont.ttf') format('truetype'),
+     url('../fonts/octin_vintage_b_rg-webfont.svg#webfont') format('svg');
+}
+
+/* Constants */
+
+$header-height: 75px;
+$footer-height: 45px;
+
+/* Mixins */
+
+@mixin old-wall { background-image: url("../img/old_wall.png"); }
+
+
+/* Styles */
+
+html {
+  /* sticky footer */
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin: 0 0 $footer-height;
+}
+
+html, body {
+  font-family: 'Lekton', sans-serif;
+  margin: 0;
+}
+
+h1.logo {
+  font-family: octin_vintageb_regular;
+  font-size: 60px;
+
+  @include flex(1);
+}
+
+header {
+  @include old-wall;
+  height: $header-height;
+
+  @include display(flex);
+  @include align-items(center);
+  @include justify-content(center);
+}
+
+footer {
+  @include old-wall;
+  height: $footer-height;
+
+  @include display(flex);
+  @include align-items(center);
+  @include justify-content(center);
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
