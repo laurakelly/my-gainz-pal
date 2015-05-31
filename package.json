@@ -2,9 +2,11 @@
   "name": "my-gainz-pal",
   "dependencies": {
     "browserify": "^9.0.8",
+    "d3": "^3.5.5",
     "del": "^1.1.1",
     "gulp": "^3.8.11",
     "gulp-stylus": "^2.0.1",
+    "jquery": "^2.1.4",
     "react": "^0.13.2",
     "reactify": "^1.1.0",
     "vinyl-source-stream": "^1.1.0"
