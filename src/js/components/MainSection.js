@@ -1,6 +1,6 @@
 var React = require('react');
 var $ = require('jquery');
-var d3 = require('d3');
+var Scatterplot = require('./Scatterplot');
 
 var MainSection = React.createClass({
   getInitialState: function () {
@@ -14,7 +14,9 @@ var MainSection = React.createClass({
   render: function() {
     console.log(this.state.data);
     return (
-      <h1>MainSection</h1>
+      <div className='mainSection'>
+        <Scatterplot data={this.state.data} />
+      </div>
     )
   }
 });
