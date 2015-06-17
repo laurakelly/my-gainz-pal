@@ -3,9 +3,9 @@ var d3 = require("d3");
 var _ = require("underscore");
 
 function minMax(data, property) {
-  var getX = function (d) { return d[property]};
+  var getProperty = function (d) { return d[property]};
 
-  return[_.min(data, getX), _.max(data, getX)].map(getX);
+  return [_.min(data, getProperty), _.max(data, getProperty)].map(getProperty);
 }
 
 // TODO set min/max in state so it doesn't have to be recalculated unnecessarily
@@ -19,7 +19,7 @@ var Scatterplot = React.createClass({
         .attr("transform", "translate(" + this.props.margin.left + "," + this.props.margin.top + ")");
   },
   componentDidUpdate: function() {
-    var svg = d3.select(".scatterplot").select("svg");
+    var svg = d3.select(".scatterplot svg g");
 
     var x = d3.time.scale()
         .range([0, this.props.width])
@@ -70,8 +70,7 @@ var Scatterplot = React.createClass({
       .enter().append("circle")
         .attr("class", "dot")
         .attr("r", 3.5)
-        .attr("cx", function(d){ 
-          return x(Number(d[xProperty])); })
+        .attr("cx", function(d){ return x(Number(d[xProperty])); })
         .attr("cy", function(d){ return y(Number(d[yProperty])); })
         .style("fill", "purple");
   },

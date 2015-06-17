@@ -15,6 +15,7 @@
 
 $header-height: 75px;
 $footer-height: 45px;
+$space: 30px;
 
 /* Mixins */
 
@@ -67,3 +68,6 @@ footer {
   bottom: 0;
   width: 100%;
 }
+
+
+@import "scatterplot";

@@ -145,3 +145,17 @@ footer {
   left: 0;
   bottom: 0;
   width: 100%; }
+
+.scatterplot {
+  font-size: 12px;
+  margin-top: 30px; }
+  .scatterplot svg {
+    display: block;
+    margin: 0 auto; }
+    .scatterplot svg .axis path,
+    .scatterplot svg .axis line {
+      fill: none;
+      stroke: #000;
+      shape-rendering: crispEdges; }
+    .scatterplot svg .dot {
+      stroke: none; }

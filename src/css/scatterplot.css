@@ -1,0 +1,12 @@
+.scatterplot {
+  font-size: 12px; }
+  .scatterplot svg {
+    display: block;
+    margin: 0 auto; }
+    .scatterplot svg .axis path,
+    .scatterplot svg .axis line {
+      fill: none;
+      stroke: #000;
+      shape-rendering: crispEdges; }
+    .scatterplot svg .dot {
+      stroke: none; }

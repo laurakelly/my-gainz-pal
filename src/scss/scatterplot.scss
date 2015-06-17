@@ -1,0 +1,20 @@
+.scatterplot {
+  font-size: 12px;
+  margin-top: $space; 
+
+  svg {
+    display: block;
+    margin: 0 auto;
+
+    .axis path,
+    .axis line {
+      fill: none;
+      stroke: #000;
+      shape-rendering: crispEdges; 
+    }
+
+    .dot {
+      stroke: none;
+    }
+  }
+}
