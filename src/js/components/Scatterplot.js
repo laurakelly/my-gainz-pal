@@ -1,12 +1,7 @@
 var React = require("react");
 var d3 = require("d3");
 var _ = require("underscore");
-
-function minMax(data, property) {
-  var getProperty = function (d) { return d[property]};
-
-  return [_.min(data, getProperty), _.max(data, getProperty)].map(getProperty);
-}
+var minMax = require("../utils/graphUtils").minMax;
 
 // TODO set min/max in state so it doesn't have to be recalculated unnecessarily
 

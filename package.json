@@ -13,6 +13,10 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "devDependencies": {
-    "gulp-sass": "^2.0.1"
+    "gulp-sass": "^2.0.1",
+    "jest-cli": "^0.4.13"
+  },
+  "scripts": {
+    "test": "jest"
   }
 }
