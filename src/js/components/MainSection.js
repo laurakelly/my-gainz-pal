@@ -14,9 +14,9 @@ var MainSection = React.createClass({
   },
   componentDidMount: function() {
     $.getJSON("src/test_data/mfp-export-1434497438002.json", function(data) {
-      var cleaned = _.filter(data, function(d) { if (d.weight !== "") return true})
+      var cleaned = data.filter(function(d) { if (d.weight !== "") return true; });
       this.setState({"data": cleaned});
-    }.bind(this))    
+    }.bind(this)); 
   },
   render: function() {
     return (

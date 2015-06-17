@@ -12,20 +12,16 @@ function minMax(data, property) {
 
 var Scatterplot = React.createClass({
   componentDidMount: function() {
-    console.log(this.props);
     d3.select(".scatterplot").append("svg")
-        .attr("width", this.props.width + this.props.margin.left + 
-          this.props.margin.right)
-        .attr("height", this.props.height + this.props.margin.top + 
-          this.props.margin.bottom)
+        .attr("width", this.props.width + this.props.margin.left + this.props.margin.right)
+        .attr("height", this.props.height + this.props.margin.top + this.props.margin.bottom)
       .append("g")
-        .attr("transform", "translate(" + this.props.margin.left + "," +
-          this.props.margin.top + ")");
+        .attr("transform", "translate(" + this.props.margin.left + "," + this.props.margin.top + ")");
   },
   componentDidUpdate: function() {
     var svg = d3.select(".scatterplot").select("svg");
 
-    var x = d3.scale.linear()
+    var x = d3.time.scale()
         .range([0, this.props.width])
         .domain(minMax(this.props.data, this.props.xProperty));
 
@@ -68,8 +64,6 @@ var Scatterplot = React.createClass({
     // maybe this should be stored somewhere?
     var xProperty = this.props.xProperty,
       yProperty = this.props.yProperty;
-
-    console.log(minMax(this.props.data, this.props.yProperty))
 
     svg.selectAll(".dot")
        .data(this.props.data)
